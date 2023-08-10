@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+	* {
+		background-color: #000;
+		color: #fff;
+	}
+}
+
+body {
+	--body-width: 80%;
+	display: grid;
+	grid-template-columns: 1fr var(--body-width) 1fr;
+	min-height: 100dvh;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	grid-column: 2;
+
+	height: 150px;
+
+	font-size: 1.5rem;
+
+	.nav {
+		display: flex;
+		gap: 80px;
+
+		margin: 0 auto 0 300px;
+
+		.nav__link {
+			text-decoration: none;
+		}
+
+		.nav__link.active {
+			color: red;
+			text-decoration: underline;
+		}
+	}
+}

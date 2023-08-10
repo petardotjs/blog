@@ -10,4 +10,7 @@ module.exports = {
 		project: './tsconfig.json',
 		ecmaVersion: 2022,
 	},
+	rules: {
+		'react/react-in-jsx-scope': 'off',
+	},
 }
