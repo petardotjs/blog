@@ -16,7 +16,6 @@ body {
 
 @media (prefers-color-scheme: dark) {
 	* {
-		background-color: #000;
 		color: #fff;
 	}
 }
@@ -28,12 +27,20 @@ body {
 .header {
 	display: flex;
 	align-items: center;
-	grid-column: 2;
 
 	height: 150px;
-	margin-inline: 10%;
+	padding-inline: 10%;
+
+	--header-color: rgb(102, 13, 90);
 
 	font-size: 1.5rem;
+	font-family: Baloo, sans-serif;
+	background-image: linear-gradient(
+		to right,
+		var(--header-color) 10%,
+		color-mix(in oklab, var(--header-color) 90%, white 10%),
+		var(--header-color) 90%
+	);
 
 	.nav {
 		display: flex;
@@ -52,6 +59,7 @@ body {
 			.logo-icon {
 				border-bottom: 2px solid;
 			}
+
 			.logo-text {
 				text-decoration: underline;
 			}
@@ -63,7 +71,38 @@ body {
 
 		.nav__link.active,
 		.nav__link:hover {
-			text-decoration: underline;
+			position: relative;
 		}
+
+		.nav__link:hover::after {
+			content: '';
+			position: absolute;
+			top: calc(100%);
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: oklch(100% 0 100);
+			animation: underlineIn 0.2s ease backwards;
+		}
+
+		.nav__link.active::after {
+			content: '';
+			position: absolute;
+			top: calc(100%);
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background-color: oklch(100% 0 100);
+			width: 100%;
+		}
+	}
+}
+
+@keyframes underlineIn {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
 	}
 }

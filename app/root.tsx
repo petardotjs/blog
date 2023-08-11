@@ -25,6 +25,15 @@ export default function App() {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width,initial-scale=1" />
+				<style>
+					{`
+          			@font-face {
+            			font-family: 'Baloo';
+            			font-display: fallback;
+            			src: url('/fonts/baloo/baloo-regular.woff') format('woff');
+          			}
+        		`}
+				</style>
 				<Meta />
 				<Links />
 			</head>
@@ -37,7 +46,7 @@ export default function App() {
 									width="60"
 									height="60"
 									viewBox="0 0 15 15"
-									fill="#800080"
+									fill="#ffffff"
 									xmlns="http://www.w3.org/2000/svg"
 								>
 									<path
