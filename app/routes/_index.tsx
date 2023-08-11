@@ -1,4 +1,9 @@
-import { type V2_MetaFunction } from '@remix-run/node'
+import { LinksFunction, type V2_MetaFunction } from '@remix-run/node'
+import indexStyles from '../styles/index.css'
+
+export const links: LinksFunction = () => {
+	return [{ rel: 'stylesheet', href: indexStyles }]
+}
 
 export const meta: V2_MetaFunction = () => {
 	return [
@@ -12,5 +17,5 @@ export const meta: V2_MetaFunction = () => {
 }
 
 export default function Index() {
-	return <div />
+	return <main className="main">oaoa</main>
 }

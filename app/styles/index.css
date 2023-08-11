@@ -1,0 +1,15 @@
+.main {
+	--main-color: rgb(36, 10, 32);
+
+	height: calc(
+		100dvh - var(--root-header-height) - var(--root-footer-height) - 2 *
+			var(--root-hr-height)
+	);
+
+	background-image: linear-gradient(
+		to right,
+		var(--main-color) 10%,
+		color-mix(in oklab, var(--main-color) 90%, white 10%),
+		var(--main-color) 90%
+	);
+}
